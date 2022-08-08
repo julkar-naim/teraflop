@@ -1,4 +1,4 @@
-package org.teraflop;
+package com.teraflop.app;
 
 import static org.junit.Assert.assertTrue;
 
