@@ -1,4 +1,4 @@
-package org.teraflop;
+package com.teraflop.init;
 
 /**
  * Hello world!
