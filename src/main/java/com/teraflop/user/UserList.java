@@ -1,19 +1,27 @@
 package com.teraflop.user;
 
+import com.teraflop.util.Exceptions.UserNotFoundException;
+
+import java.io.Serializable;
 import java.util.List;
 
-public class UserList<T> {
-    private List<? extends T> list;
+public class UserList implements Serializable {
+    private List<User> users;
+    private static UserList instance;
 
-    UserList(List<? extends T> list) {
-        this.list = list;
+    public void reset() {
+        this.users.clear();
+        instance = null;
     }
 
-    public List<? extends T> getUserList() {
-        return this.list;
+    public static UserList createUserList() {
+        if (instance == null)
+            instance = new UserList(Datasource.getUserFromDB());
+        return instance;
     }
-    public void deleteUser(T u) {
 
+    private UserList(List<User> users) {
+        this.users = users;
     }
 
 }
