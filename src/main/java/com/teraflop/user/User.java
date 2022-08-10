@@ -6,12 +6,16 @@ public class User implements Serializable {
 
     private String id;
     private String name;
+
+
     private String username;
     private String email;
     private String password;
     private boolean adminStatus;
 
 
+    public String getUsername() { return username; }
+    public void setUsername(String username) { this.username = username; }
     public void setAdminStatus (boolean adminStatus) { this.adminStatus = adminStatus; }
     public boolean isAdmin() { return this.adminStatus; }
     public String getPassword() { return this.password; }

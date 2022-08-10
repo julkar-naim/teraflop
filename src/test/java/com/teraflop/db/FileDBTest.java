@@ -2,14 +2,23 @@ package com.teraflop.db;
 
 import org.junit.Test;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import static org.junit.Assert.*;
+
 public class FileDBTest {
 
     @Test
-    public void wirteList() {
-    }
+    public void readFromDBAndWrite() {
+        List<String> list = new ArrayList<>();
+        FileDB<String> filedb = new FileDB<>("user.db");
 
-    @Test
-    public void readList() {
+        list.add("this is a new string");
+        filedb.wirteList(list);
+
+        List<String> deserializedObject = filedb.readList();
+
+        assertNotNull(deserializedObject);
     }
 }

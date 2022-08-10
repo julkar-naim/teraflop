@@ -1,8 +1,8 @@
-package com.teraflop.user;
+package com.teraflop.db;
 
 import java.util.List;
 
-interface Datasource<T> {
+public interface Datasource<T> {
     void wirteList(List<T> list);
     List<T> readList();
 }
