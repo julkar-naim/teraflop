@@ -1,4 +1,4 @@
-package com.teraflop.init;
+package com.teraflop.app;
 
 /**
  * Hello world!
